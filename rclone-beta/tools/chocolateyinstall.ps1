@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName= 'rclone'
+$packageName= 'rclone-beta'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url        = 'http://beta.rclone.org/rclone-beta-latest-windows-386.zip'
 $url64      = 'http://beta.rclone.org/rclone-beta-latest-windows-amd64.zip'
