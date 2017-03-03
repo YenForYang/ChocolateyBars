@@ -15,7 +15,7 @@ $Options = [ordered]@{
         Type = 'markdown'                                   #Report type: markdown or text
         Path = "$PSScriptRoot\Update-AUPackages.md"         #Path where to save the report
         Params= @{                                          #Report parameters:
-            Github_UserRepo = $Env:github_user_repo       #  Markdown: shows user info in upper right corner
+            Github_UserRepo = $Env:github_user_repo         #  Markdown: shows user info in upper right corner
             NoAppVeyor  = $false                            #  Markdown: do not show AppVeyor build shield
             UserMessage = "[History](#update-history)"       #  Markdown, Text: Custom user message to show
             NoIcons     = $false                            #  Markdown: don't show icon
@@ -31,7 +31,7 @@ $Options = [ordered]@{
     }
 
     Gist = @{
-        Id     = 3f2ab691bfdbe7a9ec05b2bdf3b11762                              #Your gist id; leave empty for new private or anonymous gist
+        Id     = $Env:gist_id                               #Your gist id; leave empty for new private or anonymous gist
         ApiKey = $Env:github_api_key                        #Your github api key - if empty anoymous gist is created
         Path   = "$PSScriptRoot\Update-AUPackages.md", "$PSScriptRoot\Update-History.md"       #List of files to add to the gist
     }
