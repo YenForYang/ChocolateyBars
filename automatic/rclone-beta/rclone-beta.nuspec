@@ -3,10 +3,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>rclone-beta</id>
-    <version>1.35.153</version>
+    <version>1.35.157</version>
     <packageSourceUrl>https://github.com/YenForYang/ChocolateyBars</packageSourceUrl>
     <owners>YenForYang</owners>
-    <title>rclone-beta (Install)</title>
+    <title>rclone-beta (Portable)</title>
     <authors>Nick Craig-Wood</authors>
     <projectUrl>http://rclone.org/</projectUrl>
     <iconUrl>https://cdn.rawgit.com/YenForYang/ChocolateyBars/master/rclone-beta/rclone-120x120.png</iconUrl>
