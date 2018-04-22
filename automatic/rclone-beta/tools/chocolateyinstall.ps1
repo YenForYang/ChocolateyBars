@@ -1,20 +1,29 @@
-﻿$ErrorActionPreference = 'Stop';
+﻿
+$ErrorActionPreference = 'Stop'
+
 $packageName= 'rclone-beta'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://beta.rclone.org/rclone-beta-latest-windows-386.zip'
-$url64 = 'http://beta.rclone.org/rclone-beta-latest-windows-amd64.zip'
-$html = $(Invoke-Webrequest -Uri 'http://beta.rclone.org/')
-$env:ChocolateyPackageVersion = $html.ParsedHtml.getElementsByTagName('A') | ?{ $_.outerHtml -match 'v.\...-.*' } | ?{ $_.innerText.length -eq ($html.ParsedHtml.getElementsByTagName('A') | ?{ $_.outerHtml -match 'v.\...-.*' } | %{ $_.innerText.length } | sort | select -last 1) } | % innerText | sort | select -last 1 | %{ $_ -replace '.{10}$' -replace '-', '.' -replace '^{1}.'}
+
+$url32 = 'http://beta.rclone.org/v1.40-140-gd997418b-opendrive/rclone-v1.40-140-gd997418b-opendrive-windows-386.zip'
+$url64 = 'http://beta.rclone.org/v1.40-140-gd997418b-opendrive/rclone-v1.40-140-gd997418b-opendrive-windows-amd64.zip'
+
+$checksum32 = '39a7c92e12769d8107a54aa510505462'
+$checksum64 = '480b59acf72ed08a24eabd7c71d85404'
+
 $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
-  fileType      = 'exe'
-  url           = $url
+  url           = $url32
   url64bit      = $url64
   softwareName  = 'rclone*'
-  checksum      = $html.ParsedHtml.getElementsByTagName('TD') | select -Last 1 -Skip 5 | % innerText
-  checksumType  = 'md5'
-  checksum64    = $html.ParsedHtml.getElementsByTagName('TD') | select -Last 1 | % innerText
-  checksumType64= 'md5'	
+  checksum      = $checksum32
+  checksum64    = $checksum64
 }
-Install-ChocolateyZipPackage $packageName $url $toolsDir $url64 -checksum $checksum -checksumType $checksumType -checksum64 $checksum64 -checksumType64 $checksumType64
+Install-ChocolateyZipPackage `
+							 -PackageName $packageName `
+							 -Url $url32 `
+							 -UnzipLocation $toolsDir `
+							 -Url64bit $url64 `
+							 -Checksum $checksum32 `
+							 -Checksum64 $checksum64
+
