@@ -22,4 +22,4 @@ function global:au_GetLatest
 	@{ URL32 = $url32; URL64 = $url64; Version = $finalVersion; ChecksumType32 = 'md5'; ChecksumType64 = 'md5' }
 }
 
-update -ChecksumFor all -NoReadme 
+update -ChecksumFor all -NoReadme
