@@ -4,7 +4,7 @@
 [![](https://ci.appveyor.com/api/projects/status/github/YenForYang/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/YenForYang/chocolatey-packages)
 [Update status](https://gist.github.com/YenForYang/3f2ab691bfdbe7a9ec05b2bdf3b11762)
 [![](http://transparent-favicon.info/favicon.ico)](#)
-[chocolatey/YOUR_CHOCOLATEY_USERNAME_HERE](https://chocolatey.org/profiles/YenForYang)
+[chocolatey/YenForYang](https://chocolatey.org/profiles/YenForYang)
 
 <!-- EDIT ME-->
 <!-- REMOVE THE squiggles "~" surrounding this (this should not be a code block) -->
